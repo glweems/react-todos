@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Todos from "./components/Todos";
+import Header from "./components/layout/Header";
+import AddTodo from "./components/AddTodo";
 import "bulma";
 
 class App extends Component {
@@ -34,12 +36,22 @@ class App extends Component {
     });
   };
 
+  delTodo = id => {
+    this.setState({
+      todos: [...this.state.todos.filter(todo => todo.id !== id)]
+    });
+  };
   render() {
     const todos = this.state.todos;
-    console.log(this.state.todos);
     return (
       <div className="App">
-        <Todos todos={todos} markComplete={this.markComplete} />
+        <Header />
+        <AddTodo />
+        <Todos
+          todos={todos}
+          markComplete={this.markComplete}
+          delTodo={this.delTodo}
+        />
       </div>
     );
   }

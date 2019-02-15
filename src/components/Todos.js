@@ -3,17 +3,14 @@ import TodoItem from "./TodoItem";
 import PropTypes from "prop-types";
 
 class Todos extends Component {
-  delTodo = id => {
-    console.log(id);
-  };
   render() {
     const todos = this.props.todos;
-    return todos.map(todo => (
+    return todos.map((todo, index) => (
       <TodoItem
-        key={todo.id}
+        key={index}
         todo={todo}
         markComplete={this.props.markComplete}
-        delTodo={this.delTodo}
+        delTodo={this.props.delTodo}
       />
     ));
   }

@@ -18,15 +18,28 @@ class App extends Component {
       {
         id: 3,
         title: "Finish Todo App",
-        completed: true
+        completed: false
       }
     ]
   };
+
+  markComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    });
+  };
+
   render() {
+    const todos = this.state.todos;
     console.log(this.state.todos);
     return (
       <div className="App">
-        <Todos todos={this.state.todos} />
+        <Todos todos={todos} markComplete={this.markComplete} />
       </div>
     );
   }

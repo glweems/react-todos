@@ -3,8 +3,19 @@ import TodoItem from "./TodoItem";
 import PropTypes from "prop-types";
 
 class Todos extends Component {
+  delTodo = id => {
+    console.log(id);
+  };
   render() {
-    return this.props.todos.map(todo => <TodoItem key={todo.id} todo={todo} />);
+    const todos = this.props.todos;
+    return todos.map(todo => (
+      <TodoItem
+        key={todo.id}
+        todo={todo}
+        markComplete={this.props.markComplete}
+        delTodo={this.delTodo}
+      />
+    ));
   }
 }
 

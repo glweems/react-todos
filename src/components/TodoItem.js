@@ -12,13 +12,31 @@ class TodoItem extends Component {
   };
 
   render() {
+    const { id, title } = this.props.todo;
     return (
       <div style={this.getStyle()}>
-        <h3>{this.props.todo.title}</h3>
+        <p>
+          <input
+            type="checkbox"
+            onChange={this.props.markComplete.bind(this, id)}
+          />{" "}
+          {title}
+          <button
+            className="button is-small is-danger is-rounded"
+            onClick={this.props.delTodo.bind(this, id)}
+            style={btnStyle}
+          >
+            X
+          </button>
+        </p>
       </div>
     );
   }
 }
+
+const btnStyle = {
+  float: "right"
+};
 
 // PropTypes
 TodoItem.propTypes = {

@@ -1,7 +1,6 @@
 {
   "name": "react-todos",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "bulma": "^0.7.4",
     "node-sass": "^4.11.0",

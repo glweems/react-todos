@@ -21,21 +21,25 @@ class TodoItem extends Component {
             onChange={this.props.markComplete.bind(this, id)}
           />{" "}
           {title}
-          <button
+          <svg
+            viewBox="0 0 40 40"
+            style={svgStyle}
             className="button is-small is-danger is-rounded"
             onClick={this.props.delTodo.bind(this, id)}
-            style={btnStyle}
           >
-            X
-          </button>
+            <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
+          </svg>
         </p>
       </div>
     );
   }
 }
 
-const btnStyle = {
-  float: "right"
+const svgStyle = {
+  float: "right",
+  width: "60px",
+  stroke: "black",
+  strokeWidth: "10"
 };
 
 // PropTypes

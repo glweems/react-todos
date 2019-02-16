@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["react-todos.glweems.com", "www.react-todos.glweems.com"],
+  "alias": ["react-todos.now.sh"],
   "builds": [
     {
       "src": "package.json",
